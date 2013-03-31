@@ -1,0 +1,10 @@
+libsvm中的工具grid.py和训练与预测程序svm-train.exe和svm-predict.exe
+在作业中，先调用grid.py，利用交叉检验得到rbf kernel里效果最好c和gamma的参数，然后利用这个参数在svm-train里训练，然后使用svm-predict进行预测得到输出结果。
+下面以edh特征为例，给出操作：
+1、在系统中安装python环境；
+2、运行grid.py，命令行：F:\tools\grid.py -log2c -15,15,1 -log2g -15,15,1 -v 5 -svmtrain svm-train.exe -gnuplot F:\tools\gnuplot\bin\pgnuplot.exe edh_train
+这是调用grid的命令，-log2c设置c的取值范围2的-15到15此方，步长是1，-log2g设置g的取值，v设置了交叉检验的分组，gnuplot设置gunplot的路径，可以展示参数好坏，最后输入训练集。
+3、运行svm-train，命令行：svm-train -c 2 -g 0.0000305 edh_train edh_model
+c和g的参数是有第二步得到的最佳参数，edh_train是训练集，edh_model是输出的model
+4、运行svm-predict,命令行：svm-predic edh_test edh_model edh_out
+edh_test是测试集的特征，model是3的，edh_out是分类结果。

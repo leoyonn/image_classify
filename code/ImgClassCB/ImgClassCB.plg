@@ -1,0 +1,71 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: ImgClassCB - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Leo\LOCALS~1\Temp\RSP36.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "./include" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Release/" /Fp"Release/ImgClassCB.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\0_homeworks\ImgClassCBProj\code\ImgClassCB\TrainDlg.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Leo\LOCALS~1\Temp\RSP36.tmp" 
+Creating temporary file "C:\DOCUME~1\Leo\LOCALS~1\Temp\RSP37.tmp" with contents
+[
+./lib/cximagecrt.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/ImgClassCB.pdb" /machine:I386 /out:"./bin/ImgClassCB.exe" 
+.\Release\ClassChooseBar.obj
+.\Release\DirectoryTreeBar.obj
+.\Release\DirTreeCtrl.obj
+.\Release\FeatureExDlg.obj
+.\Release\ImgClassCB.obj
+.\Release\ImgClassCBDoc.obj
+.\Release\ImgClassCBView.obj
+.\Release\MainFrm.obj
+.\Release\PreviewBar.obj
+.\Release\scbarcf.obj
+.\Release\scbarg.obj
+.\Release\sizecbar.obj
+.\Release\StdAfx.obj
+.\Release\TestDlg.obj
+.\Release\TrainDlg.obj
+.\Release\ViewResults.obj
+.\Release\ImgClassCB.res
+]
+Creating command line "link.exe @C:\DOCUME~1\Leo\LOCALS~1\Temp\RSP37.tmp"
+<h3>Output Window</h3>
+Compiling...
+TrainDlg.cpp
+Linking...
+   Creating library ./bin/ImgClassCB.lib and object ./bin/ImgClassCB.exp
+Creating temporary file "C:\DOCUME~1\Leo\LOCALS~1\Temp\RSP3B.tmp" with contents
+[
+/nologo /o"Release/ImgClassCB.bsc" 
+.\Release\StdAfx.sbr
+.\Release\ClassChooseBar.sbr
+.\Release\DirectoryTreeBar.sbr
+.\Release\DirTreeCtrl.sbr
+.\Release\FeatureExDlg.sbr
+.\Release\ImgClassCB.sbr
+.\Release\ImgClassCBDoc.sbr
+.\Release\ImgClassCBView.sbr
+.\Release\MainFrm.sbr
+.\Release\PreviewBar.sbr
+.\Release\scbarcf.sbr
+.\Release\scbarg.sbr
+.\Release\sizecbar.sbr
+.\Release\TestDlg.sbr
+.\Release\TrainDlg.sbr
+.\Release\ViewResults.sbr]
+Creating command line "bscmake.exe @C:\DOCUME~1\Leo\LOCALS~1\Temp\RSP3B.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+ImgClassCB.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

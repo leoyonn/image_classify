@@ -1,0 +1,8 @@
+功能：将不同分类器的结果进行融合，得到新的分类结果
+方法：根据不同的分类器对每一类的打分，加总分数进行重新分类
+打开svmtest.dsw编译即可。
+命令行参数：
+model1 test1 model2 test2 model3 test3 model4 test4 output
+model代表每个训练的svm的model，test代表测试集的特征向量，output是分类结果文件名。
+输入：4个特征的model和测试机特征向量
+输出：分类结果

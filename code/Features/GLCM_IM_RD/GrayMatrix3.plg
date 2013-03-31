@@ -1,0 +1,39 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: GrayMatrix3 - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Leo\LOCALS~1\Temp\RSP7.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/GrayMatrix3.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\1_C++\GLCM_IM_RD\GrayMatrix3Dlg.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Leo\LOCALS~1\Temp\RSP7.tmp" 
+Creating temporary file "C:\DOCUME~1\Leo\LOCALS~1\Temp\RSP8.tmp" with contents
+[
+./lib/cximagecrt.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/GrayMatrix3.pdb" /machine:I386 /out:"Release/GrayMatrix3.exe" 
+".\Release\Canny.obj"
+".\Release\GrayComatrix.obj"
+".\Release\GrayMatrix3.obj"
+".\Release\GrayMatrix3Dlg.obj"
+".\Release\InvariantMoment.obj"
+".\Release\StdAfx.obj"
+".\Release\GrayMatrix3.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\Leo\LOCALS~1\Temp\RSP8.tmp"
+<h3>Output Window</h3>
+Compiling...
+GrayMatrix3Dlg.cpp
+Linking...
+   Creating library Release/GrayMatrix3.lib and object Release/GrayMatrix3.exp
+
+
+
+<h3>Results</h3>
+GrayMatrix3.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

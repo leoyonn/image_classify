@@ -1,0 +1,657 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 209, 163
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "关于ImgClassCB..."
+FONT 9, "新宋体"
+BEGIN
+    DEFPUSHBUTTON   "退出",IDOK,112,134,90,22,WS_GROUP
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,7,21,21
+    LTEXT           "基于内容的图像分类 V1.0.0...",IDC_STATIC,48,19,119,8,
+                    SS_NOPREFIX
+    LTEXT           "开发小组：\n\n刘洋：   leoyonn@gmail.com\n\n刘守君： liushoujun@icst.pku.edu.cn\n\n钟原：   zhongyuan@icst.pku.edu.cn\n\n\n如有任何问题，欢迎与我们联系：）",
+                    IDC_STATIC,16,37,142,91
+    PUSHBUTTON      "E-mail",IDC_BTN_EMAIL,157,106,37,13
+    PUSHBUTTON      "程序使用说明",IDC_BTN_README,7,134,90,22,WS_GROUP
+END
+
+IDD_DLG_FeatureEx DIALOGEX 0, 0, 187, 224
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "特征提取"
+FONT 9, "新宋体"
+BEGIN
+    EDITTEXT        IDC_EDT_INTRAIN,56,19,92,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDT_INTEST,56,35,92,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDT_OUTTRAIN,56,51,92,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDT_OUTTEST,56,67,92,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_BTN_INTRAINBRO,153,18,20,15,WS_DISABLED | NOT 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDC_BTN_INTESTBRO,153,34,20,15,WS_DISABLED | NOT 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDC_BTN_OUTTRAINBRO,153,50,20,15,WS_DISABLED
+    PUSHBUTTON      "...",IDC_BTN_OUTTESTBRO,153,66,20,15,WS_DISABLED
+    CONTROL         "边缘直方图",IDC_RAD_0,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,14,109,56,10
+    CONTROL         "颜色直方图",IDC_RAD_1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,14,123,56,10
+    CONTROL         "Gabor特征",IDC_RAD_2,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,14,137,52,10
+    CONTROL         "Hu不变矩",IDC_RAD_3,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,14,151,48,10
+    CONTROL         "Hu不变矩扩展",IDC_RAD_4,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,14,165,64,10
+    CONTROL         "Hough变换",IDC_RAD_5,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,95,109,52,10
+    CONTROL         "灰度共生矩阵",IDC_RAD_6,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,95,123,64,10
+    CONTROL         "分块灰度共生矩阵",IDC_RAD_7,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,95,137,80,10
+    CONTROL         "SIFT",IDC_RAD_11,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,95,151,32,10
+    CONTROL         "PCA-SIFT",IDC_RAD_9,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,95,165,48,10
+    DEFPUSHBUTTON   "提取指定特征",IDOK,9,192,79,25
+    PUSHBUTTON      "取消(&C)",IDCANCEL,99,192,79,25
+    GROUPBOX        "请选择特征种类",IDC_STATIC,7,93,173,90
+    GROUPBOX        "请指定输入图片目录、输出数据文件",IDC_STATIC,7,7,173,81
+    LTEXT           "训练集输入",IDC_STATIC,13,21,41,8
+    LTEXT           "测试集输入",IDC_STATIC,13,37,41,8
+    LTEXT           "训练集输出",IDC_STATIC,13,53,41,8
+    LTEXT           "测试集输出",IDC_STATIC,13,69,41,8
+END
+
+IDD_DLG_TrainDlg DIALOGEX 0, 0, 187, 248
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "分类器训练"
+FONT 9, "新宋体"
+BEGIN
+    EDITTEXT        IDC_EDT_INFeatTrain,56,19,92,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDT_OutFeatTrain,56,36,92,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    PUSHBUTTON      "...",IDC_BTN_InFeatTrainBro,153,18,20,15,WS_DISABLED
+    PUSHBUTTON      "...",IDC_BTN_OutFeatTrainBro,153,35,20,15,WS_DISABLED
+    CONTROL         "边缘直方图EDH",IDC_RAD_0,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,14,76,68,10
+    CONTROL         "颜色直方图CCH",IDC_RAD_1,"Button",BS_AUTORADIOBUTTON,14,
+                    90,68,10
+    CONTROL         "Gabor纹理特征",IDC_RAD_20,"Button",BS_AUTORADIOBUTTON,
+                    14,104,68,10
+    CONTROL         "Hu不变矩",IDC_RAD_3,"Button",BS_AUTORADIOBUTTON,14,118,
+                    48,10
+    CONTROL         "Hu不变矩扩展",IDC_RAD_4,"Button",BS_AUTORADIOBUTTON,14,
+                    132,64,10
+    CONTROL         "灰度共生矩阵GLCM",IDC_RAD_5,"Button",BS_AUTORADIOBUTTON,
+                    86,76,80,10
+    CONTROL         "分块灰度共生矩阵",IDC_RAD_6,"Button",BS_AUTORADIOBUTTON,
+                    86,90,80,10
+    CONTROL         "SIFT",IDC_RAD_7,"Button",BS_AUTORADIOBUTTON,86,104,32,
+                    10
+    CONTROL         "PCA-SIFT",IDC_RAD_8,"Button",BS_AUTORADIOBUTTON,86,118,
+                    48,10
+    CONTROL         "组合特征 EDH+GLCM..",IDC_RAD_9,"Button",
+                    BS_AUTORADIOBUTTON,86,132,92,10
+    CONTROL         "libSVM",IDC_RAD_11,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,12,171,40,10
+    CONTROL         "KNN",IDC_RAD_12,"Button",BS_AUTORADIOBUTTON,73,171,28,
+                    10
+    CONTROL         "SVM + KNN",IDC_RADIO12,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,119,171,52,10
+    CONTROL         "Adaboost",IDC_RADIO13,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,12,187,59,10
+    CONTROL         "Bagging",IDC_RADIO14,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,73,187,44,10
+    DEFPUSHBUTTON   "训练分类器",IDOK,9,216,79,25
+    PUSHBUTTON      "取消(&C)",IDCANCEL,99,216,79,25
+    GROUPBOX        "请选择使用的特征",IDC_STATIC,7,62,173,86
+    GROUPBOX        "请指定分类器训练输入输出数据",IDC_STATIC,7,7,173,50
+    LTEXT           "输入特征",IDC_STATIC,17,21,33,8
+    LTEXT           "输出结果",IDC_STATIC,17,38,33,8
+    GROUPBOX        "请指定分类器类别",IDC_STATIC,7,153,173,55
+END
+
+IDD_DLG_TestDlg DIALOGEX 0, 0, 187, 248
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "分类器测试"
+FONT 9, "新宋体"
+BEGIN
+    EDITTEXT        IDC_EDT_INFeatTest,56,19,92,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDT_OutFeatTest,56,36,92,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    PUSHBUTTON      "...",IDC_BTN_InFeatTestBro,153,18,20,15,WS_DISABLED
+    PUSHBUTTON      "...",IDC_BTN_OutFeatTestBro,153,35,20,15,WS_DISABLED
+    CONTROL         "边缘直方图EDH",IDC_RAD_0,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,14,76,68,10
+    CONTROL         "颜色直方图CCH",IDC_RAD_1,"Button",BS_AUTORADIOBUTTON,14,
+                    90,68,10
+    CONTROL         "Gabor纹理特征",IDC_RAD_2,"Button",BS_AUTORADIOBUTTON,14,
+                    104,68,10
+    CONTROL         "Hu不变矩",IDC_RAD_3,"Button",BS_AUTORADIOBUTTON,14,118,
+                    48,10
+    CONTROL         "Hu不变矩扩展",IDC_RAD_4,"Button",BS_AUTORADIOBUTTON,14,
+                    132,64,10
+    CONTROL         "灰度共生矩阵GLCM",IDC_RAD_5,"Button",BS_AUTORADIOBUTTON,
+                    86,76,80,10
+    CONTROL         "分块灰度共生矩阵",IDC_RAD_6,"Button",BS_AUTORADIOBUTTON,
+                    86,90,80,10
+    CONTROL         "SIFT",IDC_RAD_7,"Button",BS_AUTORADIOBUTTON,86,104,32,
+                    10
+    CONTROL         "PCA-SIFT",IDC_RAD_8,"Button",BS_AUTORADIOBUTTON,86,118,
+                    48,10
+    CONTROL         "组合特征 EDH+GLCM..",IDC_RAD_9,"Button",
+                    BS_AUTORADIOBUTTON,86,132,90,10
+    CONTROL         "libSVM",IDC_RAD_11,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,12,171,40,10
+    CONTROL         "KNN",IDC_RAD_12,"Button",BS_AUTORADIOBUTTON,73,171,28,
+                    10
+    CONTROL         "SVM + KNN",IDC_RADIO12,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,119,171,52,10
+    CONTROL         "Adaboost",IDC_RADIO13,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,12,187,59,10
+    CONTROL         "Bagging",IDC_RADIO14,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,73,187,44,10
+    DEFPUSHBUTTON   "测试分类器",IDOK,9,216,79,25
+    PUSHBUTTON      "取消(&C)",IDCANCEL,99,216,79,25
+    GROUPBOX        "请指定分类器测试输入输出数据",IDC_STATIC,7,7,173,50
+    GROUPBOX        "请选择使用的特征",IDC_STATIC,7,62,173,86
+    LTEXT           "输入特征",IDC_STATIC,17,21,33,8
+    LTEXT           "输出结果",IDC_STATIC,17,38,33,8
+    GROUPBOX        "请指定分类器类别",IDC_STATIC,7,153,173,55
+END
+
+IDD_DLG_ViewResult DIALOGEX 0, 0, 471, 297
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "查看分类结果"
+FONT 9, "新宋体"
+BEGIN
+    EDITTEXT        IDC_EDT_INResultFile,13,176,120,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_InResultFileBro,140,175,31,15
+    CONTROL         "边缘直方图EDH",IDC_RAD_0,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,14,21,68,10
+    CONTROL         "颜色直方图CCH",IDC_RAD_1,"Button",BS_AUTORADIOBUTTON,14,
+                    35,68,10
+    CONTROL         "Gabor纹理特征",IDC_RAD_20,"Button",BS_AUTORADIOBUTTON,
+                    14,49,68,10
+    CONTROL         "Hu不变矩",IDC_RAD_3,"Button",BS_AUTORADIOBUTTON,14,63,
+                    48,10
+    CONTROL         "Hu不变矩扩展",IDC_RAD_4,"Button",BS_AUTORADIOBUTTON,14,
+                    77,64,10
+    CONTROL         "灰度共生矩阵GLCM",IDC_RAD_5,"Button",BS_AUTORADIOBUTTON,
+                    90,21,80,10
+    CONTROL         "分块灰度共生矩阵",IDC_RAD_6,"Button",BS_AUTORADIOBUTTON,
+                    90,35,80,10
+    CONTROL         "SIFT",IDC_RAD_7,"Button",BS_AUTORADIOBUTTON,90,49,32,10
+    CONTROL         "PCA-SIFT",IDC_RAD_8,"Button",BS_AUTORADIOBUTTON,90,63,
+                    48,10
+    CONTROL         "EDH + CCH + GLCM",IDC_RAD_9,"Button",BS_AUTORADIOBUTTON,
+                    90,77,80,10
+    CONTROL         "libSVM",IDC_RAD_11,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,12,117,40,10
+    CONTROL         "KNN",IDC_RAD_12,"Button",BS_AUTORADIOBUTTON,73,117,28,
+                    10
+    CONTROL         "SVM + KNN",IDC_RADIO12,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,119,117,52,10
+    CONTROL         "Adaboost",IDC_RADIO13,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,12,133,59,10
+    CONTROL         "Bagging",IDC_RADIO14,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,73,133,44,10
+    DEFPUSHBUTTON   "查看结果",IDOK,71,257,47,25
+    PUSHBUTTON      "取消(&C)",IDCANCEL,127,257,47,25
+    GROUPBOX        "请选择分类时使用的特征",IDC_STATIC,7,7,172,86
+    GROUPBOX        "请指定分类器类别",IDC_STATIC,7,99,172,55
+    PUSHBUTTON      "Confusion Matrix 文本",IDC_BTN_ConMatText,192,25,125,17
+    GROUPBOX        "手动指定原始结果文件(*.rrw)",IDC_STATIC,7,159,172,77
+    GROUPBOX        "通过Confusion Matrix 查看分类结果",IDC_STATIC,185,7,279,
+                    283
+    GROUPBOX        "查看最终分类结果",IDC_STATIC,7,243,171,47
+    PUSHBUTTON      "Confusion Matrix 图片显示",IDC_BTN_ConMatImg,333,25,125,
+                    17
+    CONTROL         "",IDC_PICTURE,"Static",SS_BITMAP,192,49,15,14
+    PUSHBUTTON      "导入结果数据",IDC_BTN_LoadRRW,13,200,158,28
+    PUSHBUTTON      "文本结果",IDC_BTN_ViewResultTxt,15,257,47,25
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 202
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 156
+    END
+
+    IDD_DLG_FeatureEx, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 217
+    END
+
+    IDD_DLG_TrainDlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 241
+    END
+
+    IDD_DLG_TestDlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 241
+    END
+
+    IDD_DLG_ViewResult, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 464
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 290
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "系统 (&S)"
+    BEGIN
+        MENUITEM "新建 (&N)",                   ID_FILE_NEW
+        MENUITEM SEPARATOR
+        MENUITEM "退出 (&X)",                   ID_APP_EXIT
+    END
+    POPUP "操作 (&O)"
+    BEGIN
+        MENUITEM "特征提取(&F)",                ID_MENU_FeatureExtract
+        MENUITEM "训练分类器 (&T)",             ID_MENU_Train
+        MENUITEM "测试分类(&P)",                ID_MENU_Test
+        MENUITEM "查看分类结果(&O)",            ID_MENU_ViewResult
+    END
+    POPUP "视图 (&V)"
+    BEGIN
+        MENUITEM "工具栏 (&T)",                 ID_VIEW_TOOLBAR
+        MENUITEM "状态栏 (&S)",                 ID_VIEW_STATUS_BAR
+        MENUITEM "我的电脑栏 (&D)",             ID_VIEW_DIRECTORY_BAR
+        MENUITEM "大图预览栏 (&P)",             ID_VIEW_PREVIEW_BAR
+    END
+    POPUP "帮助 (&H)"
+    BEGIN
+        MENUITEM "&关于 ImgClassCB...",         ID_APP_ABOUT
+    END
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ImgClassCB.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+
+1                       24      DISCARDABLE     "res\\default1.bin"
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\ImgClassCB.ico"
+IDR_IMGCCBVTYPE         ICON    DISCARDABLE     "res\\ImgClassCBDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    SEPARATOR
+    BUTTON      ID_STOP_THREAD
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "ImgClassCB MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "ImgClassCB\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "ImgClassCB.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "ImgClassCB Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "ImgClassCB\n\nThumbV\n\n\nImgClassCB.Document\nThumbV Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "ImgClassCB"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_DIRECTORY_BAR   "Show or hide the directory bar\nToggle DirectoryBar"
+    ID_VIEW_PREVIEW_BAR     "Show or hide the preview bar\nToggle PreviewBar"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\ImgClassCB.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
